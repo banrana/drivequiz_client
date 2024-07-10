@@ -6,20 +6,26 @@ const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
     try {
-      await register(username, email, password);
+      const response = await register(username, email, password);
+      console.log('Registration response:', response);
+      alert('Đăng ký thành công!');
       navigate('/login');
     } catch (error) {
-      console.error('Registration failed:', error);
+      console.error('Registration failed:', error.response?.data || error.message);
+      setError(error.response?.data?.message || 'Có lỗi xảy ra khi đăng ký');
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
+      {error && <div style={{ color: 'red' }}>{error}</div>}
       <input
         type="text"
         value={username}
