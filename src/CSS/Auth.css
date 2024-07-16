@@ -1,0 +1,37 @@
+/* Auth.css */
+
+.center-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.custom-card {
+    background-color: #007bff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    height: 300px;
+    width: 400px;
+}
+
+.form-control {
+    border-radius: 10px; 
+}
+
+.btn-submit {
+    background-color: #00ff55 !important; 
+    color: #6d6c6c !important; 
+    font-weight: bold; 
+}
+
+.btn-register {
+    background-color: #ffd000 !important; 
+    color: #6d6c6c !important;
+    font-weight: bold; 
+}
+
+.font-bold {
+    font-weight: bold;
+}
